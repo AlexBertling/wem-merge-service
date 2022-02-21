@@ -1,12 +1,12 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const path = require('path');
 const cors = require('cors');
 const {mergeFiles} = require("./merge_streams.js");
 
 const app = express();
-const port = 3000;
 
-app.use("/public", express.static('public'));
+app.use("/public", express.static(path.join(__dirname,'public')));
 app.use(fileUpload({
   createParentPath: true,
 }));
@@ -50,7 +50,4 @@ app.post("/merge", async (req, res) => {
   res.status(200).send(downloadUrl);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-});
-
+module.exports = app;
