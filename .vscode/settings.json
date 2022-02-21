@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/40833f6b-615d-4808-8595-c8b09a8a50be/resourceGroups/wem-merge-service/providers/Microsoft.Web/sites/wem-merge-service",
+    "appService.deploySubpath": "."
+}
